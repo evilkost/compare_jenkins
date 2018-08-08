@@ -36,17 +36,14 @@ def main(base, main, feature):
     click.echo("Failed in the feature branch: {}".format(len(feature_branch)))
 
     new_failed = sorted(feature_failed - main_failed)
-    click.echo("\n ==== Failed in feature, green in main. Total: {} ===".format(len(new_failed)))
+    click.echo("\n === Failed in feature, green in main. Total: {} ===".format(len(new_failed)))
     for line in new_failed:
         click.echo(line)
 
     main_fixed = sorted(main_failed - feature_failed)
-    click.echo("\n ==== Green in feature, failed in main. Total: {} ===".format(len(main_fixed)))
+    click.echo("\n === Green in feature, failed in main. Total: {} ===".format(len(main_fixed)))
     for line in main_fixed:
         click.echo(line)
-    # import ipdb; ipdb.set_trace()
-    #
-    # x = 2
 
 
 if __name__ == "__main__":
