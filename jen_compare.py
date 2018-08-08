@@ -33,7 +33,7 @@ def main(base, main, feature):
     feature_failed = get_set_from_html(feature_doc)
 
     click.echo("Failed in the main branch: {}".format(len(main_failed)))
-    click.echo("Failed in the feature branch: {}".format(len(feature_branch)))
+    click.echo("Failed in the feature branch: {}".format(len(feature_failed)))
 
     new_failed = sorted(feature_failed - main_failed)
     click.echo("\n === Failed in feature, green in main. Total: {} ===".format(len(new_failed)))
